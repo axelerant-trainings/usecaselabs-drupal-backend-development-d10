@@ -1,0 +1,5 @@
+name: Lazy Builder Block
+description: Lazy Builder Block to display date and time.
+package: Custom
+type: module
+core_version_requirement: ^9.5 || ^10

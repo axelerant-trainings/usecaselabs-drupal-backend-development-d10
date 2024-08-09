@@ -1,0 +1,4 @@
+services:
+  lazy_builder_block.timestamp_generator:
+    class: Drupal\lazy_builder_block\DateAndTimeGenerator
+    arguments: ['@current_user']

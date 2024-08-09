@@ -1,0 +1,25 @@
+uuid: 2ace5c98-2d6e-4200-a216-ee22871ba79f
+langcode: en
+status: true
+dependencies:
+  module:
+    - lazy_builder_block
+    - system
+  theme:
+    - olivero
+id: olivero_lazybuilderdateandtime
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: date_and_time
+settings:
+  id: date_and_time
+  label: 'Lazy Builder Date and Time'
+  label_display: visible
+  provider: lazy_builder_block
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
