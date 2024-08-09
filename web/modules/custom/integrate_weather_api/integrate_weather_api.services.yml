@@ -1,0 +1,4 @@
+services:
+  weather:
+    class: Drupal\integrate_weather_api\Services\Weather
+    arguments: ["@config.factory", "@http_client"]

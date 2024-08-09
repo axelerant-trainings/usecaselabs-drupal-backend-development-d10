@@ -1,0 +1,6 @@
+integrate_weather_api.settings:
+  title: "Weather API Configuration"
+  description: "Set configuration related to Weather API"
+  parent: system.admin_config_development
+  route_name: integrate_weather_api.settings
+  weight: 100
