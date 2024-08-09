@@ -1,0 +1,7 @@
+name: 'Email configuration'
+type: module
+description: 'To manage email template and users email ids'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:config

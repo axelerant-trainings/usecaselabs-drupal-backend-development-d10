@@ -1,0 +1,11 @@
+# Schema for the configuration files of the Email configuration module.
+email_configuration.settings:
+  type: config_object
+  label: 'Email configuration settings'
+  mapping:
+    template:
+      type: textarea
+      label: 'Template'
+    email_ids:
+      type: textarea
+      label: 'User email ids'

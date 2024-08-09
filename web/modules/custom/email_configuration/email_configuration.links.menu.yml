@@ -1,0 +1,6 @@
+email_configuration.email_config.form:
+  title: Email Configuration Form
+  description: To manage email template and users email ids
+  route_name: email_configuration.email_config.form
+  parent: system.admin_config_system
+  weight: 20
