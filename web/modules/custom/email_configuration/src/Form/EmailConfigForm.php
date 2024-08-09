@@ -6,11 +6,39 @@ namespace Drupal\email_configuration\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\EmailValidatorInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure Email configuration settings for this site.
  */
 final class EmailConfigForm extends ConfigFormBase {
+
+  /**
+   * The email validator service.
+   *
+   * @var \Drupal\Component\Utility\EmailValidatorInterface
+   */
+  protected $emailValidator;
+
+  /**
+   * Constructs a UserPasswordForm object.
+   *
+   * @param \Drupal\Component\Utility\EmailValidatorInterface $email_validator
+   *   The email validator service.
+   */
+  public function __construct(EmailValidatorInterface $email_validator) {
+    $this->emailValidator = $email_validator;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('email.validator'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -35,7 +63,7 @@ final class EmailConfigForm extends ConfigFormBase {
       '#title' => $this->t('Template'),
       '#rows' => 5,
       '#default_value' => $this->config('email_configuration.settings')->get('template'),
-      '#description' => $this->t('Enter your text here.'),
+      '#description' => $this->t('Enter your email body here.'),
     ];
     $form['email_ids'] = [
       '#type' => 'textarea',
@@ -52,13 +80,12 @@ final class EmailConfigForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
     $email_ids = $form_state->getValue('email_ids');
-    $email_pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
     if ($email_ids) {
       $email_ids_array = explode(",", $email_ids);
       if(!empty($email_ids_array)) {
         foreach ($email_ids_array as $email_id) {
           // To validate email id
-          if (!preg_match($email_pattern, $email_id)) {
+          if (!$this->emailValidator->isValid($email_id)) {
             $form_state->setErrorByName('email_ids', $this->t('The email ids are not valid.'));
           }
         }

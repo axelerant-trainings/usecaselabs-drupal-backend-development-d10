@@ -12,6 +12,6 @@ The site administrators on your website have requested they should be able to ma
 
 1. `ddev drush en email_configuration`
 2. `ddev drush cim -y`
-3. Navigate to [Email Configuration Form](https://drupal-use-case-labs.ddev.site/admin/config/system/email-config/form) to configure values
+3. Navigate to [Email Configuration Form](/admin/config/system/email-config/form) to configure values
 4. You should be able to see values for Template and User email ids
 5. Change the data as per need and hit save
