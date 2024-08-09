@@ -1,0 +1,16 @@
+uuid: 639dc4f2-a2c4-4a78-972e-768717b501a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - email_configuration
+    - system
+    - toolbar
+id: site_administrator
+label: 'Site Administrator'
+weight: 4
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'administer email configuration form'
+  - 'view the administration theme'

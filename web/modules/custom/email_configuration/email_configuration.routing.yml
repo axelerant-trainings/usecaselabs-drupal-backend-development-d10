@@ -4,4 +4,4 @@ email_configuration.email_config.form:
     _title: 'Email Configuration Form'
     _form: 'Drupal\email_configuration\Form\EmailConfigForm'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'administer email configuration form'
