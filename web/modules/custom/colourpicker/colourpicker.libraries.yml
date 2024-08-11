@@ -1,0 +1,22 @@
+jquery.farbtastic:
+  remote: https://github.com/mattfarina/farbtastic
+  version: "1.3u"
+  license:
+    name: GPL-2.0-or-later
+    url: https://raw.githubusercontent.com/mattfarina/farbtastic/master/LICENSE.txt
+    gpl-compatible: true
+  js:
+    //cdn.jsdelivr.net/gh/mattfarina/farbtastic@1.3u/farbtastic.min.js:
+      { type: external, minified: true }
+  css:
+    component:
+      //cdn.jsdelivr.net/gh/mattfarina/farbtastic@1.3u/farbtastic.css:
+        { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+picker:
+  js:
+    js/colourpicker.js: {}
+  dependencies:
+    - colourpicker/jquery.farbtastic

@@ -1,0 +1,21 @@
+uuid: 29873a1c-8a65-48a4-8e4c-b0bf807b5a75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_background_colour
+    - node.type.article
+  module:
+    - colourpicker
+id: node.article.field_background_colour
+field_name: field_background_colour
+entity_type: node
+bundle: article
+label: 'Background Colour'
+description: 'Select the background colour for the article body. If left blank, the default white background would apply.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: colourpicker_hex
