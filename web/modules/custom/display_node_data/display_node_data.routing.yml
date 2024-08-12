@@ -1,0 +1,7 @@
+display_node_data.display:
+  path: '/nodes-by-author'
+  defaults:
+    _controller: '\Drupal\display_node_data\Controller\NodesByAuthorController::displayNodeInTabularFormat'
+    _title: 'Nodes By Author'
+  requirements:
+    _permission: 'access content'
