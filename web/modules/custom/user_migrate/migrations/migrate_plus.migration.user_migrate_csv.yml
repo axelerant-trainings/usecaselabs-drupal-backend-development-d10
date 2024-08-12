@@ -11,9 +11,16 @@ source:
     - id
 process:
   # Mapping between the fields and csv columns
-  name: username
-  mail: email
-  status: status
+  name:
+    # Attaching custom validator 'user_validate'
+    plugin: user_validate
+    source: username
+  mail:
+    plugin: user_validate
+    source: email
+  status:
+    plugin: user_validate
+    source: status
   roles:
     - plugin: explode
       delimiter: ","
