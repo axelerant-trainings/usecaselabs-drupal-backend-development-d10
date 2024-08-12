@@ -10,4 +10,4 @@ dependencies:
 config_devel:
   install:
     - migrate_plus.migration_group.user_migrate
-    - migrate_plus.migration.user_migration_csv
+    - migrate_plus.migration.user_migrate_csv
