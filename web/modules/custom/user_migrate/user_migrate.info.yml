@@ -1,0 +1,13 @@
+name: 'User migrate'
+type: module
+description: 'To migrate users from CSV file using Drupal’s Migrate system.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - migrate_source_csv:migrate_source_csv
+config_devel:
+  install:
+    - migrate_plus.migration_group.user_migrate
+    - migrate_plus.migration.user_migration_csv

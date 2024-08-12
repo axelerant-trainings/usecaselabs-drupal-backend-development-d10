@@ -1,0 +1,29 @@
+id: user_migrate_csv
+label: Migrate users data from the CSV
+migration_group: user_migrate
+source:
+  plugin: csv
+  path: 'modules/custom/user_migrate/assets/users.csv'
+  # Neglect 1st row for header
+  header_row_count: 1
+  # Unique identifier mapping
+  ids:
+    - id
+process:
+  # Mapping between the fields and csv columns
+  name: username
+  mail: email
+  status: status
+  roles:
+    - plugin: explode
+      delimiter: ","
+      source: roles
+      default_value: []
+destination:
+  plugin: 'entity:user'
+dependencies:
+  enforced:
+    module:
+      - user
+      - migrate_plus
+      - migrate_tools
