@@ -1,0 +1,99 @@
+uuid: c5ca1448-116a-4d5f-92b9-63aefe679e3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.employee.body
+    - field.field.node.employee.field_date_of_joining
+    - field.field.node.employee.field_department
+    - field.field.node.employee.field_id
+    - node.type.employee
+  module:
+    - path
+    - text
+id: node.employee.default
+targetEntityType: node
+bundle: employee
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 8
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_of_joining:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_department:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_id:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
