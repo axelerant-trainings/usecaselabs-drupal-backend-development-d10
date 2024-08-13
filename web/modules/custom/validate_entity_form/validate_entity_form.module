@@ -13,7 +13,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 function validate_entity_form_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
   if ($entity_type->id() === 'node' && $bundle === 'employee') {
     if (isset($fields['field_id'])) {
-      // Add validation constraint for checking integer values.
+      // Add validation constraint for checking unique integer values.
       $fields['field_id']->addConstraint('UniqueInteger');
     }
   }
