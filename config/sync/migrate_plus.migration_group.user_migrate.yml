@@ -1,0 +1,12 @@
+uuid: 8e98c7b5-272f-4b37-a821-ed5e9078148b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: K0_Y1GGxaKgxZ23yQ8Xwlh7R6__TspdjoqABq9GuGdU
+id: user_migrate
+label: 'User Migrate'
+description: 'Migrate group for users related data migration'
+source_type: null
+module: null
+shared_configuration: null
