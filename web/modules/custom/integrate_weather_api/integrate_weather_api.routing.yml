@@ -1,0 +1,7 @@
+integrate_weather_api.settings:
+  path: "/admin/weather/settings"
+  defaults:
+    _form: '\Drupal\integrate_weather_api\Form\WeatherSettingsForm'
+    _title: "Weather Settings"
+  requirements:
+    _permission: "administer weather settings"
