@@ -1,0 +1,5 @@
+name: "Colourpicker HEX Field"
+description: "Adds a custom field for colourpicker"
+type: module
+package: Custom
+core_version_requirement: ^10
