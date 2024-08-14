@@ -1,0 +1,8 @@
+name: "Validate Entity Form"
+description: "Validates the entity form using constraints"
+type: module
+package: Custom
+core_version_requirement: ^10
+
+dependencies:
+  - drupal:field

@@ -1,0 +1,18 @@
+uuid: 5ad3c5e9-8af6-46fb-ba93-526573e737af
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Employee
+type: employee
+description: 'Contains employee details'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: true
