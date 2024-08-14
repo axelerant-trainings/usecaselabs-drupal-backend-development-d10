@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
+    - block
     - comment
     - contact
     - file
@@ -23,6 +24,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'administer blocks'
   - 'delete own files'
   - 'post comments'
   - 'search content'

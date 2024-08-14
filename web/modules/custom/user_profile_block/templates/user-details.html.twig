@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme implementation to display user details over a block.
+ *
+ * Available variables:
+ * - first_name: The user's first name.
+ * - last_name: The user's last name.
+ * - contact_number: The user's contact number.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="user-details-wrapper">
+	<p class="welcome-note">
+		<em>Welcome,
+			{{ first_name }}
+			{{ last_name }}
+		</em>
+	</p>
+	{% if contact_number is not empty %}
+		<p class="user-contact">
+			<strong>Contact:</strong>
+			{{ contact_number }}
+		</p>
+	{% endif %}
+</div>

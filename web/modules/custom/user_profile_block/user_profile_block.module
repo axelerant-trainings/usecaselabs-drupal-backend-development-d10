@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks implementations.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function user_profile_block_theme() {
+  return [
+    'user_details' => [
+      'variables' => [
+        'first_name' => NULL,
+        'last_name' => NULL,
+        'contact_number' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function user_profile_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['user_register_form', 'user_form'])) {
+    $form['#validate'][] = 'user_profile_block_validate_contact_number';
+  }
+}
+
+/**
+ * Validate the user contact number.
+ */
+function user_profile_block_validate_contact_number($form, FormStateInterface &$form_state) {
+  $contact_number = $form_state->getValue('field_contact_number')[0]['value'];
+
+  // Validations.
+  if (!empty($contact_number) && !is_numeric($contact_number)) {
+    $form_state->setErrorByName('field_contact_number', t('Please enter a valid contact number'));
+  }
+  if (!empty($contact_number) && strlen($contact_number) !== 10) {
+    $form_state->setErrorByName('field_contact_number', t('Please enter a 10 digit contact number'));
+  }
+}

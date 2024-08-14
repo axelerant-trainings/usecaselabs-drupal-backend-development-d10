@@ -1,0 +1,33 @@
+uuid: 13d61590-3835-4626-b52a-e7c34c2c6ff0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+    - user_profile_block
+  theme:
+    - olivero
+id: olivero_userdetails
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: user_profile_details
+settings:
+  id: user_profile_details
+  label: 'User Details'
+  label_display: visible
+  provider: user_profile_block
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
