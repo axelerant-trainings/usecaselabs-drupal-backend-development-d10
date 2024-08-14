@@ -25,7 +25,6 @@ process:
     - plugin: explode
       delimiter: ","
       source: roles
-      default_value: []
 destination:
   plugin: 'entity:user'
 dependencies:

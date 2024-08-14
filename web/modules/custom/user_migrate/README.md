@@ -9,8 +9,9 @@ You want to migrate users using CSV file, migrate users using Drupal’s Migrate
 
 ## Steps to configure and check
 
-1. `ddev drush en user_migrate -y`
-2. To import users from CSV `ddev drush migrate:import user_migrate_csv`
-3. To check the import status `ddev drush migrate:status user_migrate_csv`
-4. To check the import deatiled status(messages) `ddev drush migrate:messages user_migrate_csv` here Source ID(s) means the `id` column in CSV. For eg: test5
-5. To rollback the import `ddev drush migrate:rollback user_migrate_csv`
+1. `ddev composer install` to get required modules
+2. `ddev drush cim -y` to import module configuration
+3. To import users from CSV `ddev drush migrate:import user_migrate_csv`
+4. To check the import status `ddev drush migrate:status user_migrate_csv`
+5. To check the import deatiled status(messages) `ddev drush migrate:messages user_migrate_csv` here Source ID(s) means the `id` column in CSV. For eg: test5
+6. To rollback the import `ddev drush migrate:rollback user_migrate_csv`

@@ -32,7 +32,7 @@ final class UserValidate extends ProcessPluginBase {
     // Validate username
     if ($destination_property == 'name') {
       if ($value == "") {
-        throw new MigrateSkipRowException("Username cann't be empty");
+        throw new MigrateSkipRowException("Username can't be empty");
       }
     }
 
@@ -40,7 +40,7 @@ final class UserValidate extends ProcessPluginBase {
     if ($destination_property == 'mail') {
       $email_pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
       if ($value == "") {
-        throw new MigrateSkipRowException("Email address cann't be empty");
+        throw new MigrateSkipRowException("Email address can't be empty");
       }
       elseif (!preg_match($email_pattern, $value)) {
         throw new MigrateSkipRowException("Email address is invalid");
@@ -50,7 +50,7 @@ final class UserValidate extends ProcessPluginBase {
     // Validate status
     if ($destination_property == 'status') {
       if ($value == "") {
-        throw new MigrateSkipRowException("Status cann't be empty");
+        throw new MigrateSkipRowException("Status can't be empty");
       }
       elseif (!in_array($value, ['0', '1'])) {
         throw new MigrateSkipRowException("Status can only be 0 or 1");
