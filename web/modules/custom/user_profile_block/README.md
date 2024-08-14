@@ -15,3 +15,10 @@ Create a custom block plugin that allows users to update their profile informati
 - The block should at any point of time reflect the updated user data. Implement appropriate cache tags and contexts.
 
 ## Usage
+
+- The module adds 3 fields on the user: First Name, Last Name and Contact Number.
+- The module also provides a block `User Details` added on the homepage sidebar region and is visible only to logged in users.
+- The block displays the values of these fields with an option of editing them as well.
+- Hovering on the block should display a pencil icon, click on `Configure Block` and you should be able to see the fields for First Name, Last Name and Contact Number alongwith other Block related fields and configurations.
+- The fields would be auto-poulated with the values set while user creation, update them as needed and save the changes.
+- Navigate to the homepage to check the block displays updated values.
