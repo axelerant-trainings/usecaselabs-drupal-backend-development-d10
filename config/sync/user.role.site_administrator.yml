@@ -1,0 +1,23 @@
+uuid: 2498fd7d-1e15-4902-bb7c-f9f9373bcfac
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company_finances
+  module:
+    - node
+    - node_access_control
+    - system
+    - toolbar
+id: site_administrator
+label: 'Site Administrator'
+weight: 4
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer node access control'
+  - 'create company_finances content'
+  - 'edit any company_finances content'
+  - 'edit own company_finances content'
+  - 'view the administration theme'

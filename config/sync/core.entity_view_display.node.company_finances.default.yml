@@ -1,0 +1,30 @@
+uuid: 22b35db9-ab28-48ab-9b18-16a68eac4eea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.company_finances.body
+    - field.field.node.company_finances.field_user_access
+    - node.type.company_finances
+  module:
+    - text
+    - user
+id: node.company_finances.default
+targetEntityType: node
+bundle: company_finances
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_user_access: true
