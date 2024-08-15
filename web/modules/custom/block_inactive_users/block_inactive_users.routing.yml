@@ -1,0 +1,6 @@
+block_inactive_users.block_old_accounts:
+  path: "/admin/people/block-old-users"
+  defaults:
+    _controller: '\Drupal\block_inactive_users\Controller\BlockUserController::blockOldUsers'
+  requirements:
+    _permission: "administer users"
