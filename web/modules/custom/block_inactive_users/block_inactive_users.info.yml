@@ -1,0 +1,8 @@
+name: "Block Inactive Users"
+description: "Handles blocking of inactive user accounts"
+type: module
+package: Custom
+core_version_requirement: ^10
+
+dependencies:
+  - drupal:user

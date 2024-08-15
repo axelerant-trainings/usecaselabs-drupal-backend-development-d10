@@ -1,0 +1,6 @@
+block_inactive_users.block_old_accounts:
+  route_name: block_inactive_users.block_old_accounts
+  title: "Block Old Users"
+  appears_on:
+    - entity.user.collection
+  weight: 10
