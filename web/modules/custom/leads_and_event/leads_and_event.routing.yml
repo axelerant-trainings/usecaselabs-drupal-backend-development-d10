@@ -1,0 +1,23 @@
+leads_and_event.add_lead:
+  path: '/add-lead'
+  defaults:
+    _form: '\Drupal\leads_and_event\Form\LeadForm'
+    _title: 'Add Lead'
+  requirements:
+    _permission: 'manage lead data'
+
+leads_and_event.edit_lead:
+  path: '/edit/{id}/lead'
+  defaults:
+    _form: '\Drupal\leads_and_event\Form\LeadForm'
+    _title: 'Edit Lead'
+  requirements:
+    _permission: 'manage lead data'
+
+leads_and_event.autocomplete:
+  path: '/lead-autocomplete'
+  defaults:
+    _controller: '\Drupal\leads_and_event\Controller\LeadAutocompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'

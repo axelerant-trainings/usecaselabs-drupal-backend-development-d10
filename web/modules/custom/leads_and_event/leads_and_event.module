@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Module for Leads and event module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function leads_and_event_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ('node_event_form' === $form_id || 'node_event_edit_form' === $form_id) {
+
+    $form['field_lead_reference']['widget'][0]['value']['#autocomplete_route_name'] = 'leads_and_event.autocomplete';
+
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function leads_and_event_node_insert(NodeInterface $node) {
+
+  if ($node->bundle() == 'event') {
+    $my_service = \Drupal::service('leads_and_event.update_nid_of_lead_data');
+    $my_service->updateNidOfLeadData($node->id(), $node->get('field_lead_reference')->value);
+  }
+
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function leads_and_event_node_update(NodeInterface $node) {
+
+  if ($node->bundle() == 'event') {
+    $my_service = \Drupal::service('leads_and_event.update_nid_of_lead_data');
+    $my_service->updateNidOfLeadData($node->id(), $node->get('field_lead_reference')->value);
+  }
+}

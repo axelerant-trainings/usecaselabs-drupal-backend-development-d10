@@ -1,0 +1,4 @@
+services:
+  leads_and_event.update_nid_of_lead_data:
+    class: Drupal\leads_and_event\LeadsAndEvent
+    arguments: ['@database']

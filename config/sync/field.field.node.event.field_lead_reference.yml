@@ -1,0 +1,19 @@
+uuid: 1d50073c-73ea-4ac4-9d6e-bbd12633ccdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead_reference
+    - node.type.event
+id: node.event.field_lead_reference
+field_name: field_lead_reference
+entity_type: node
+bundle: event
+label: 'Lead Reference'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
