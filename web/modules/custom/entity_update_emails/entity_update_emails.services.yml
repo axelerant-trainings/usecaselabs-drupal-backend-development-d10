@@ -1,0 +1,8 @@
+services:
+  entity_update_emails.mail_queue_service:
+    class: 'Drupal\entity_update_emails\MailQueueService'
+    arguments: ['@queue', '@plugin.manager.mail', '@renderer', '@logger.channel.default', '@current_user', '@entity_update_emails.user_role_service']
+  
+  entity_update_emails.user_role_service:
+    class: 'Drupal\entity_update_emails\UserRoleService'
+    arguments: ['@entity_type.manager']
