@@ -1,0 +1,8 @@
+name: "Internal Event Details"
+description: "Shows internal event details in a block"
+type: module
+package: Custom
+core_version_requirement: ^10
+
+dependencies:
+  - drupal:block
