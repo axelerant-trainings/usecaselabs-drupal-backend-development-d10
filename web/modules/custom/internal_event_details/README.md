@@ -16,7 +16,7 @@ Create a custom block plugin that allows administrators to manage the message. T
 
 ## Usage
 
-- The module adds a block `Internal Event Details` in the homepage sidebar region which displays a custom message
+- The module adds a block `Internal Event Details` which the adminstrators can manage
 - The administrator user can update the message, add link(optional) and an end-time
 - The administrator user can set the roles to which this block would be shown
 - When the end time has passed, the block should not be shown on the page
