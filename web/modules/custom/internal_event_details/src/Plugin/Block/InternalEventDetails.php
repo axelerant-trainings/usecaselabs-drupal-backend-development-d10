@@ -78,9 +78,6 @@ class InternalEventDetails extends BlockBase {
       '#theme' => 'internal_event_details',
       '#message' => $this->configuration['message'],
       '#link' => $this->configuration['link'],
-      '#cache' => [
-        'max-age' => $this->configuration['end_time'] - time(),
-      ],
     ];
   }
 
