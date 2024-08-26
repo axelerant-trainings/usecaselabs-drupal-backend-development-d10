@@ -46,7 +46,7 @@ class InternalEventDetails extends BlockBase {
       '#type' => 'url',
       '#title' => $this->t('Link'),
       '#description' => $this->t('Eg: https://www.google.com.'),
-      '#default_value' => $this->configuration['link'],
+      '#default_value' => $this->configuration['link'] ?? '',
     ];
     $form['end_time'] = [
       '#type' => 'datetime',
