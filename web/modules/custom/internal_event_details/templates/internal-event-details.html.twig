@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme implementation to display internal block details.
+ *
+ * Available variables:
+ * - message: Internal event message.
+ * - link: Optional link to be shown.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="internal-event-details--wrapper">
+	<div>{{ message }}</div>
+	{% if link is not empty %}
+		<div>{{ link('See more details', link) }}</div>
+	{% endif %}
+</div>

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Contains hooks implementations.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function internal_event_details_theme() {
+  return [
+    'internal_event_details' => [
+      'variables' => [
+        'message' => NULL,
+        'link' => NULL,
+      ],
+    ],
+  ];
+}
