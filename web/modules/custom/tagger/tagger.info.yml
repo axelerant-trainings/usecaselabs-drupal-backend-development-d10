@@ -1,0 +1,8 @@
+name: 'Tagger'
+type: module
+description: 'Provides a Drush command to add tags and apply them to Article content.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:node
+  - drupal:taxonomy

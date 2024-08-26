@@ -1,0 +1,5 @@
+services:
+  tagger.commands:
+    class: \Drupal\tagger\Drush\Commands\TaggerCommands
+    tags:
+      - { name: drush.command }
