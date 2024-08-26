@@ -2,11 +2,19 @@
 
 namespace Drupal\tagger\Drush\Commands;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drush\Commands\DrushCommands;
+use Drush\Commands\AutowireTrait;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
 
 class TaggerCommands extends DrushCommands {
+
+  use AutowireTrait;
+
+  public function __construct(protected EntityTypeManagerInterface $entityTypeManager) {
+    parent::__construct();
+  }
 
   /**
    * Adds tags to Article nodes.
@@ -29,9 +37,7 @@ class TaggerCommands extends DrushCommands {
 
     // Load existing tags ids from passed tag names or create them.
     foreach ($tags as $tag_name) {
-      $term = \Drupal::entityTypeManager()
-        ->getStorage('taxonomy_term')
-        ->loadByProperties(['name' => $tag_name, 'vid' => 'tags']);
+      $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['name' => $tag_name, 'vid' => 'tags']);
       if (empty($term)) {
         $term = Term::create([
           'vid' => 'tags',
@@ -48,9 +54,7 @@ class TaggerCommands extends DrushCommands {
       $node_ids = array_map("trim", explode(",", $ids));
       $nodes = Node::loadMultiple($node_ids);
     } else {
-      $nodes = \Drupal::entityTypeManager()
-        ->getStorage('node')
-        ->loadByProperties(['type' => 'article']);
+      $nodes = $this->entityTypeManager->getStorage('node')->loadByProperties(['type' => 'article']);
     }
 
     // Processing nodes to check and apply tags.
