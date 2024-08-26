@@ -1,0 +1,7 @@
+name: Entity Update Emails
+description: Send personalised emails on entity updates.
+package: Custom
+type: module
+core_version_requirement: ^10
+dependencies:
+  - drupal:swiftmailer

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Module file for entity update emails module contains hooks.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_create().
+ */
+function entity_update_emails_node_create(NodeInterface $node) {
+
+  if ($node->bundle() == 'article') {
+    \Drupal::service('entity_update_emails.mail_queue_service')->queueEmail($node);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function entity_update_emails_node_update(NodeInterface $node) {
+
+  if ($node->bundle() == 'article') {
+    \Drupal::service('entity_update_emails.mail_queue_service')->queueEmail($node);
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function entity_update_emails_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'email_queue':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
