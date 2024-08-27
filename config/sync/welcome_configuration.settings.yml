@@ -1,0 +1,1 @@
+template: "Hello @username,\r\n\r\nWe are grateful to have you since @membersince.\r\nYour last login with us was on @lastlogin.\r\n\r\nThanks"

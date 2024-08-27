@@ -1,0 +1,15 @@
+welcome_configuration.welcome_config.form:
+  path: '/admin/config/system/welcome-config/form'
+  defaults:
+    _title: 'Welcome Configuration Form'
+    _form: 'Drupal\welcome_configuration\Form\WelcomeConfigForm'
+  requirements:
+    _permission: 'administer welcome configuration form'
+
+welcome_configuration.welcome_page:
+  path: '/welcome-page'
+  defaults:
+    _title: 'Welcome Page'
+    _controller: '\Drupal\welcome_configuration\Controller\WelcomeController'
+  requirements:
+    _role: 'authenticated'

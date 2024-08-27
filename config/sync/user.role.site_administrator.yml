@@ -1,0 +1,18 @@
+uuid: 6fd59203-8229-4ee7-9d58-041e49df260e
+langcode: en
+status: true
+dependencies:
+  module:
+    - shortcut
+    - system
+    - toolbar
+    - welcome_configuration
+id: site_administrator
+label: 'Site Administrator'
+weight: 4
+is_admin: null
+permissions:
+  - 'access shortcuts'
+  - 'access toolbar'
+  - 'administer welcome configuration form'
+  - 'view the administration theme'

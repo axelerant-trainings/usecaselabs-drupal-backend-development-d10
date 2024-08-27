@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Welcome configuration module.
+welcome_configuration.settings:
+  type: config_object
+  label: 'Welcome configuration settings'
+  mapping:
+    template:
+      type: textarea
+      label: 'Template'
