@@ -20,10 +20,7 @@ final class WelcomeController extends ControllerBase {
   /**
    * Welcome controller constructor.
    */
-  public function __construct(protected ConfigFactoryInterface $config_factory, protected AccountInterface $account, protected DateFormatterInterface $dateFormatter) {
-    $this->config_factory = $config_factory;
-    $this->account = $account;
-  }
+  public function __construct(protected ConfigFactoryInterface $config_factory, protected AccountInterface $account, protected DateFormatterInterface $dateFormatter) {}
 
   /**
    * {@inheritDoc}
