@@ -36,7 +36,7 @@ final class WelcomeConfigForm extends ConfigFormBase {
       '#rows' => 5,
       '#required' => TRUE,
       '#default_value' => $this->config('welcome_configuration.settings')->get('template'),
-      '#description' => $this->t('Enter your welcome text here. Available tokens: @username, @lastlogin, @membersince'),
+      '#description' => $this->t('Enter your welcome text here. Available tokens: @username, @member-since, @last-login-date'),
     ];
     return parent::buildForm($form, $form_state);
   }
