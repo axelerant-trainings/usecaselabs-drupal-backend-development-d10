@@ -1,0 +1,11 @@
+welcome_configuration.welcome_config.form:
+  title: Welcome Configuration Form
+  description: To manage welcome template
+  route_name: welcome_configuration.welcome_config.form
+  parent: system.admin_config_system
+  weight: 20
+welcome_configuration.welcome_page:
+  title: Welcome
+  description: Page for logged in users
+  route_name: welcome_configuration.welcome_page
+  menu_name: main

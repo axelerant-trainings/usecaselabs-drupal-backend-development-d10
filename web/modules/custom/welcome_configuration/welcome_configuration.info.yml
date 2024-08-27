@@ -1,0 +1,8 @@
+name: 'Welcome configuration'
+type: module
+description: 'To manage welcome template for users'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:config
+  - drupal:user

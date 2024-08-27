@@ -1,0 +1,1 @@
+template: "Hello @username,\r\n\r\nWe appreciate your loyalty since @member-since. You last logged in on @last-login-date, and we're excited to have you back.\r\n\r\nThank you for being a part of our journey!"
