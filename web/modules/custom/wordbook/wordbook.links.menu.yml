@@ -1,0 +1,11 @@
+entity.wordbook.settings:
+  title: 'Wordbook'
+  description: 'Configure a Wordbook entity type.'
+  route_name:  entity.wordbook.settings
+  parent: system.admin_structure
+
+entity.wordbook.collection:
+  title: 'Wordbook'
+  description: 'List of wordbook items.'
+  route_name: entity.wordbook.collection
+  parent: system.admin_content

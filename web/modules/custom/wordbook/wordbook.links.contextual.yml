@@ -1,0 +1,10 @@
+entity.wordbook.edit_form:
+  route_name: entity.wordbook.edit_form
+  group: wordbook
+  title: 'Edit'
+
+entity.wordbook.delete_form:
+  route_name: entity.wordbook.delete_form
+  group: wordbook
+  title: 'Delete'
+  weight: 10

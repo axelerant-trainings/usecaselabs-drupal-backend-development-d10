@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - wordbook
+id: wordbook_save_action
+label: 'Save wordbook'
+type: wordbook
+plugin: entity:save_action:wordbook
+configuration: {  }

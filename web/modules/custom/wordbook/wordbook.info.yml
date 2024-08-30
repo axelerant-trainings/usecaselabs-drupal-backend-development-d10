@@ -1,0 +1,7 @@
+name: 'Wordbook'
+type: module
+description: To manage data storage and usages of word
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:entity

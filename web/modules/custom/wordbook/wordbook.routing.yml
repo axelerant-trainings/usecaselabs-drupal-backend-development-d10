@@ -1,0 +1,7 @@
+entity.wordbook.settings:
+  path: 'admin/structure/wordbook'
+  defaults:
+    _form: '\Drupal\wordbook\Form\WordbookSettingsForm'
+    _title: 'Wordbook'
+  requirements:
+    _permission: 'administer wordbook'
