@@ -1,0 +1,11 @@
+administer wordbook:
+  title: 'Administer wordbook'
+  restrict access: true
+view wordbook:
+  title: 'View wordbook item'
+edit wordbook:
+  title: 'Edit wordbook item'
+delete wordbook:
+  title: 'Delete wordbook item'
+create wordbook:
+  title: 'Create wordbook item'

@@ -1,0 +1,13 @@
+uuid: b2a24413-abcf-4bcf-8b76-ccb92a9e9391
+langcode: en
+status: true
+dependencies:
+  module:
+    - wordbook
+_core:
+  default_config_hash: itOgHyNTfzoDqvRJ8Jjj4dtttKNwyckOvTdoOBZ4fhc
+id: wordbook_delete_action
+label: 'Delete wordbook'
+type: wordbook
+plugin: 'entity:delete_action:wordbook'
+configuration: {  }

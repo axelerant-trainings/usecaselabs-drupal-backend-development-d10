@@ -1,0 +1,13 @@
+uuid: 7fc29f7c-e55f-44ed-9e8c-91292da4bbe5
+langcode: en
+status: true
+dependencies:
+  module:
+    - wordbook
+_core:
+  default_config_hash: nA--Hw0IudgMo-p3S2-DEvT3Ug4PxWgqHOHA7wAipJ4
+id: wordbook_save_action
+label: 'Save wordbook'
+type: wordbook
+plugin: 'entity:save_action:wordbook'
+configuration: {  }

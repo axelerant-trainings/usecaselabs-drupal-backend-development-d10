@@ -1,0 +1,5 @@
+wordbook.add_form:
+  title: 'Add wordbook item'
+  route_name: entity.wordbook.add_form
+  appears_on:
+    - entity.wordbook.collection

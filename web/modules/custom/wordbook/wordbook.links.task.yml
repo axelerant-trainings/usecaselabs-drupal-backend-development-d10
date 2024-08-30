@@ -1,0 +1,22 @@
+entity.wordbook.settings:
+  title: 'Settings'
+  route_name: entity.wordbook.settings
+  base_route: entity.wordbook.settings
+entity.wordbook.view:
+  title: 'View'
+  route_name: entity.wordbook.canonical
+  base_route: entity.wordbook.canonical
+entity.wordbook.edit_form:
+  title: 'Edit'
+  route_name: entity.wordbook.edit_form
+  base_route: entity.wordbook.canonical
+entity.wordbook.delete_form:
+  title: 'Delete'
+  route_name: entity.wordbook.delete_form
+  base_route: entity.wordbook.canonical
+  weight: 10
+entity.wordbook.collection:
+  title: 'Wordbook'
+  route_name: entity.wordbook.collection
+  base_route: system.admin_content
+  weight: 10
