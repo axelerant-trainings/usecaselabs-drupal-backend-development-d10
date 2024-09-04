@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class NodesByAuthorController extends ControllerBase {
 
-  public function __construct(protected RequestStack $requestStack, protected DateFormatterInterface $dateFormatter) {
+  public function __construct(protected RequestStack $requestStack, protected DateFormatterInterface $dateFormatter, protected $database) {
   }
 
   /**
@@ -21,7 +21,8 @@ class NodesByAuthorController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('request_stack'),
-      $container->get('date.formatter')
+      $container->get('date.formatter'),
+      $container->get('database')
     );
   }
 
@@ -42,12 +43,28 @@ class NodesByAuthorController extends ControllerBase {
       'updated' => ['data' => $this->t('Updated'), 'field' => 'created', 'specifier' => 'created'],
     ];
 
-    $query = $this->entityTypeManager()->getStorage('node')->getQuery()
-      ->tableSort($header)
-      ->condition('uid', $this->currentUser()->id())
-      ->accessCheck(TRUE)
-      ->condition('title', '%' . $search_term . '%', 'LIKE')
-      ->pager(10);
+    $exclude_nids = [];
+    $menu_query = $this->database->select('menu_link_content_data', 'mlcd');
+    $menu_query->addField('mlcd', 'link__uri');
+    $menu_query->condition('mlcd.enabled', 1);
+    $menu_query->condition('mlcd.menu_name', 'main');
+
+    foreach ($menu_query->execute()->fetchAll() as $value) {
+      preg_match('/(\d+)$/', $value->link__uri, $matches);
+      if (!empty($matches[1])) {
+        $exclude_nids[] = $matches[1];
+      }
+    }
+
+    $query = $this->entityTypeManager()->getStorage('node')->getQuery();
+    $query->tableSort($header);
+    $query->condition('uid', $this->currentUser()->id());
+    if (!empty($exclude_nids)) {
+      $query->condition('nid', $exclude_nids, 'NOT IN');
+    }
+    $query->accessCheck(TRUE);
+    $query->condition('title', '%' . $search_term . '%', 'LIKE');
+    $query->pager(10);
 
     $nids = $query->execute();
 
