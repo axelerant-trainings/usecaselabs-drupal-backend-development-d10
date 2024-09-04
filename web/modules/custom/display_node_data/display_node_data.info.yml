@@ -1,0 +1,5 @@
+name: Display Node Data
+description: Display nodes by author in tabular with sorting and pagination and can we filtered.
+package: Custom
+type: module
+core_version_requirement: ^10
